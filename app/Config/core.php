@@ -275,7 +275,7 @@ Configure::write('Security.cipherSeed', '465515315354132132355645423179898233213
  * then the value of `Config.timezone` will be used. This feature allows you to set users' timezone just
  * once instead of passing it each time in function calls.
  */
-	//Configure::write('Config.timezone', 'Europe/Paris');
+    //Configure::write('Config.timezone', 'Europe/Paris');
 
 /**
  *

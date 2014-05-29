@@ -1,18 +1,20 @@
 <?php
 App::uses('AppModel', 'Model');
+
 /**
  * Rachunek Model
  *
  * @property User $User
  * @property Item $Item
  */
-class Rachunek extends AppModel {
+class Rachunek extends AppModel
+{
 
-/**
- * Validation rules
- *
- * @var array
- */
+	/**
+	 * Validation rules
+	 *
+	 * @var array
+	 */
 	public $validate = array(
 		'data_wystawienia' => array(
 			'datetime' => array(
@@ -98,11 +100,11 @@ class Rachunek extends AppModel {
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
-/**
- * belongsTo associations
- *
- * @var array
- */
+	/**
+	 * belongsTo associations
+	 *
+	 * @var array
+	 */
 	public $belongsTo = array(
 		'User' => array(
 			'className' => 'User',
@@ -113,11 +115,11 @@ class Rachunek extends AppModel {
 		)
 	);
 
-/**
- * hasAndBelongsToMany associations
- *
- * @var array
- */
+	/**
+	 * hasAndBelongsToMany associations
+	 *
+	 * @var array
+	 */
 	public $hasAndBelongsToMany = array(
 		'Item' => array(
 			'className' => 'Item',
