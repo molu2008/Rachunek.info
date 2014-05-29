@@ -1,18 +1,20 @@
 <?php
 App::uses('AppModel', 'Model');
+
 /**
  * Item Model
  *
  * @property User $User
  * @property Rachunek $Rachunek
  */
-class Item extends AppModel {
+class Item extends AppModel
+{
 
-/**
- * Validation rules
- *
- * @var array
- */
+	/**
+	 * Validation rules
+	 *
+	 * @var array
+	 */
 	public $validate = array(
 		'user_id' => array(
 			'numeric' => array(
@@ -68,11 +70,11 @@ class Item extends AppModel {
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
-/**
- * belongsTo associations
- *
- * @var array
- */
+	/**
+	 * belongsTo associations
+	 *
+	 * @var array
+	 */
 	public $belongsTo = array(
 		'User' => array(
 			'className' => 'User',
@@ -83,11 +85,11 @@ class Item extends AppModel {
 		)
 	);
 
-/**
- * hasAndBelongsToMany associations
- *
- * @var array
- */
+	/**
+	 * hasAndBelongsToMany associations
+	 *
+	 * @var array
+	 */
 	public $hasAndBelongsToMany = array(
 		'Rachunek' => array(
 			'className' => 'Rachunek',
@@ -104,16 +106,14 @@ class Item extends AppModel {
 		)
 	);
 
-    public function beforeSave(){
+	public function beforeSave()
+	{
 
-           $uid = CakeSession::read("Auth.User.id");
-            if($uid != null || $uid != 0)
-            {
-               $this->data['Item']['user_id'] = $uid ;// $current_user['email'] ;
-            }
-}
-
-
+		$uid = CakeSession::read("Auth.User.id");
+		if ($uid != null || $uid != 0) {
+			$this->data['Item']['user_id'] = $uid; // $current_user['email'] ;
+		}
+	}
 
 
 }
